@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Appygram4J
+Bundle-SymbolicName: com.appygram.java
+Bundle-Version: 0.9.0
+Bundle-Vendor: Solertium Corp.
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ClassPath: gson-2.2.4.jar,
+ .
+Export-Package: com.appygram.java
