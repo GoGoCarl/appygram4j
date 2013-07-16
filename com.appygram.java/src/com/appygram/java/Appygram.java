@@ -1,7 +1,18 @@
 package com.appygram.java;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.ProtocolException;
+import java.net.URL;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.List;
+
+import com.google.gson.Gson;
 
 /**
  * Appygram.java
@@ -90,6 +101,61 @@ public class Appygram {
 			else
 				handler.run();
 		}
+	}
+	
+	/**
+	 * Load the list of supported topics for your App from 
+	 * Appygram.com
+	 * @return
+	 */
+	public static List<AppygramTopic> topics() {
+		final List<AppygramTopic> topics = new ArrayList<AppygramTopic>();
+		
+		//TODO: use Logger or something like it.
+		if (settings == null) {
+			System.out.println(" (!) Call Appygram.configure to setup Appygram before use.");
+			return topics;
+		} else if (!settings.isConfigured()) {
+			System.out.println(" (!) Appygram not configured");
+			return topics;
+		}
+		
+		final URL url;
+		try {
+			url = new URL(settings.getUrl() + "/topics/" + settings.getKey());
+		} catch (MalformedURLException e) {
+			return topics;
+		}
+		
+		final HttpURLConnection conn;
+		try {
+			conn = (HttpURLConnection) url.openConnection();
+			conn.setRequestMethod("GET");
+			conn.setRequestProperty("Accept", "application/json");
+		} catch (ClassCastException e) {
+			return topics;
+		} catch (ProtocolException e) {
+			return topics;
+		} catch (IOException e) {
+			return topics;
+		}
+		
+		try {
+			BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+			String line = null;
+			StringBuilder in = new StringBuilder();
+				
+			while ((line = reader.readLine()) != null)
+				in.append(line);
+			
+			reader.close();
+			
+			topics.addAll(new Gson().fromJson(in.toString().trim(), AppygramTopicList.class));
+		} catch (Exception ignored) {
+			ignored.printStackTrace();
+		}
+		
+		return topics;
 	}
 	
 	static void fireAfterSendEvent(AppygramEvent event) {

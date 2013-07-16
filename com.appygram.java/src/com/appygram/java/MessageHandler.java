@@ -35,7 +35,7 @@ class MessageHandler implements Runnable {
 	public AppygramEvent execute() {
 		final URL url;
 		try {
-			url = new URL(settings.getUrl());
+			url = new URL(settings.getUrl() + "/appygrams");
 		} catch (MalformedURLException e) {
 			return failure(e.getMessage());
 		}

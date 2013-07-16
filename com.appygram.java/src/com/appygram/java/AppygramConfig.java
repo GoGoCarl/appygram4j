@@ -22,7 +22,7 @@ package com.appygram.java;
  */
 public class AppygramConfig {
 	
-	private static final String APPYGRAM_DEFAULT_URL = "https://arecibo.appygram.com/appygrams";
+	private static final String APPYGRAM_DEFAULT_URL = "http://arecibo.appygram.com";
 	
 	/*
 	 * Leaving this null tells Appygram to send to all topics

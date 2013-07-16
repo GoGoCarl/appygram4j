@@ -90,4 +90,16 @@ and the response message, if available.  To set, call:
 Appygram.addAfterSendHandler(handler);
 ```
 
+### Appygram Topics
+
+To get a listing of all the topic information that you have set up on 
+Appygram.com, you can call:
+
+```java
+Appygram.topics()
+```
+
+This will yield a list of all your topics, which you can present to 
+your client.
+
 Appygram <http://www.appygram.com>
