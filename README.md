@@ -48,6 +48,18 @@ to pass in AppygramConfig, which allows you to set the following properties:
 *   logToConsole - true to log errors to stdout, false otherwise 
     (defaults false)
 
+AppygramConfig can also take a Properties object in the constructor. 
+The following properties are supported, and correspond to the aforementioned 
+properties above, in order:
+
+*   com.appygram.java.key (required)
+*   com.appygram.java.topic
+*   com.appygram.java.url
+*   com.appygram.java.platform
+*   com.appygram.java.software
+*   com.appygram.java.console - "true" to print to console.
+*   com.appygram.java.thread - "true" to allow threads.
+
 Create this object, set the appropriate information.  Then, to configure a 
 Global AppygramMessenger:
 

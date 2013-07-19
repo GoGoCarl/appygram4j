@@ -1,5 +1,7 @@
 package com.appygram.java;
 
+import java.util.Properties;
+
 /**
  * AppygramConfig.java
  * 
@@ -22,6 +24,16 @@ package com.appygram.java;
  * - Allow Threads: Threading can be turned off by setting allowThreads to 
  * false. By default, it's on, meaning that Appygrams will be sent in the 
  * background.
+ * 
+ * This information can be set via Properties files using the following keys:
+ * 
+ * - com.appygram.java.key -- the API key (required)
+ * - com.appygram.java.topic -- the default topic
+ * - com.appygram.java.url -- the hostname of the Appygram endpoint
+ * - com.appygram.java.platform -- your application platform
+ * - com.appygram.java.software -- your application software
+ * - com.appygram.java.console -- true to log to console.
+ * - com.appygram.java.thread -- true to allow threads. 
  * 
  * @author Carl Scott, <a href="http://solertium.com">Solertium Corporation</a>
  *
@@ -51,6 +63,19 @@ public class AppygramConfig {
 		this.key = key;
 		this.topic = topic;
 		this.url = url;
+	}
+	
+	public AppygramConfig(Properties properties) {
+		final String base = "com.appygram.java.";
+		
+		this.key = properties.getProperty(base + "key");
+		this.topic = properties.getProperty(base + "topic", APPYGRAM_DEFAULT_TOPIC);
+		this.url = properties.getProperty(base + "url", APPYGRAM_DEFAULT_URL);
+		
+		this.platform = properties.getProperty(base + "platform");
+		this.software = properties.getProperty(base + "software");
+		this.logToConsole = "true".equals(properties.getProperty(base + "console"));
+		this.allowThreads = "true".equals(properties.getProperty(base + "thread"));
 	}
 	
 	public boolean isConfigured() {
