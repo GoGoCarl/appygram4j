@@ -1,5 +1,5 @@
-Appygram4J
-==========
+Appygram4J (0.9.1)
+==================
 
 Appygram4J is a simple Appygram connector for Java, supporting all 
 basic functionality for sending an Appygram to Appygram.com from 
