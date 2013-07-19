@@ -20,22 +20,42 @@ import java.net.URL;
  */
 class MessageHandler implements Runnable {
 	
-	private final AppygramConfig settings;
+	enum AppygramEndpoint {
+		Appygrams("appygrams"), Traces("traces");
+		private final String uri;
+		private AppygramEndpoint(String uri) {
+			this.uri = "/" + uri;
+		}
+		public String getUri() {
+			return uri;
+		}
+	}
+	
+	private final AppygramMessenger messenger;
 	private final AppygramMessage message;
 	
-	public MessageHandler(AppygramConfig config, AppygramMessage message) {
-		this.settings = config;
+	private AppygramEndpoint endpoint;
+	
+	public MessageHandler(AppygramMessenger messenger, AppygramMessage message) {
+		this.messenger = messenger;
 		this.message = message;
+		
+		this.endpoint = AppygramEndpoint.Appygrams;
+	}
+	
+	public void setEndpoint(AppygramEndpoint endpoint) {
+		this.endpoint = endpoint;
 	}
 	
 	public void run() {
-		Appygram.fireAfterSendEvent(execute());
+		messenger.fireAfterSendEvent(execute());
 	}
 	
 	public AppygramEvent execute() {
+		final AppygramConfig settings = messenger.getConfig();
 		final URL url;
 		try {
-			url = new URL(settings.getUrl() + "/appygrams");
+			url = new URL(settings.getUrl() + endpoint.getUri());
 		} catch (MalformedURLException e) {
 			return failure(e.getMessage());
 		}

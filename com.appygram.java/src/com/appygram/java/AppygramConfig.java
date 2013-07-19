@@ -3,8 +3,8 @@ package com.appygram.java;
 /**
  * AppygramConfig.java
  * 
- * Set initial properties for sending appygram.  You must provide your API Key. 
- * Other properties that you can set are:
+ * Set initial properties for sending appygrams.  You must provide your 
+ * API Key.  Other properties that you can set are:
  * 
  * - Topic: Provide a default topic for Appygram Messages without one. The 
  * default is null, which sends to all your topics.
@@ -12,10 +12,16 @@ package com.appygram.java;
  * to the currently supported Appygram endpoint, which may be updated in the 
  * future.
  * - Platform and Software: Provide details on your specific implementation 
- * to go along with each Appygram sent by the calling code. 
+ * to go along with each Appygram sent by the calling code.
  * 
- * Finally, you can turn Threading off by setting allowThreads to false. By 
- * default, it's on, meaning that Appygrams will be sent in the background.
+ * Additionally, you can set run configuration options:
+ * 
+ * - Log to Console: Print errors about Appygram configuration or sending 
+ * Appygrams to the console, in addition to the AppygramLogger log.  Defaults 
+ * to false.
+ * - Allow Threads: Threading can be turned off by setting allowThreads to 
+ * false. By default, it's on, meaning that Appygrams will be sent in the 
+ * background.
  * 
  * @author Carl Scott, <a href="http://solertium.com">Solertium Corporation</a>
  *
@@ -31,6 +37,7 @@ public class AppygramConfig {
 	
 	private String url, key, topic, platform, software;
 	private boolean allowThreads = true;
+	private boolean logToConsole = false;
 	
 	public AppygramConfig(String key) {
 		this(key, APPYGRAM_DEFAULT_TOPIC);
@@ -101,6 +108,14 @@ public class AppygramConfig {
 	
 	public boolean isAllowThreads() {
 		return allowThreads;
+	}
+	
+	public void setLogToConsole(boolean logToConsole) {
+		this.logToConsole = logToConsole;
+	}
+	
+	public boolean isLogToConsole() {
+		return logToConsole;
 	}
 	
 	private boolean isUnset(String value) {

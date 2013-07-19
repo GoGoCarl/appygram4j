@@ -18,14 +18,6 @@ import com.google.gson.Gson;
  */
 public class AppygramMessage {
 	
-	/**
-	 * Creates an Appygram message with sensible defaults.
-	 * @return
-	 */
-	public static AppygramMessage create() {
-		return Appygram.create();
-	}
-	
 	protected String name, email, phone, topic, message, 
 		platform, software, summary, api_key;
 	protected Map<String, Object> app_json;
@@ -102,7 +94,7 @@ public class AppygramMessage {
 		app_json = appJson;
 	}
 	
-	public boolean hasMessage() {
+	public boolean isValid() {
 		return message != null && !"".equals(message);
 	}
 
@@ -111,11 +103,15 @@ public class AppygramMessage {
 		if (this.topic == null || "".equals(this.topic))
 			this.topic = topic;
 		
-		return new Gson().toJson(this);
+		return createGson().toJson(this);
 	}
 	
 	public String toString() {
-		return new Gson().toJson(this);
+		return createGson().toJson(this);
+	}
+	
+	protected Gson createGson() {
+		return new Gson();
 	}
 
 	/**
