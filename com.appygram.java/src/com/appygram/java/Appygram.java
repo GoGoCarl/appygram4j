@@ -34,6 +34,9 @@ package com.appygram.java;
  */
 public class Appygram {
 	
+	public static void main(String[] args) {
+	}
+	
 	/**
 	 * The Global AppygramMessenger, set up using the 
 	 * Appygram.configure method.  This can be called 
