@@ -13,12 +13,10 @@ import com.google.gson.JsonSerializer;
 import com.google.gson.annotations.SerializedName;
 
 /**
- * AppygramTraceData.java
+ * <p>Trace information about an exception, handles serializing 
+ * stack trace information into Appygram trace format.</p>
  * 
- * Trace information about an exception, handles serializing 
- * stack trace information into Appygram trace format.
- * 
- * All data is serialized to JSON when sending to Appygram.
+ * <p>All data is serialized to JSON when sending to Appygram.</p>
  * 
  * @author Carl Scott, <a href="http://solertium.com">Solertium Corporation</a>
  *

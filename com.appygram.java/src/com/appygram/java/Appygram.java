@@ -2,32 +2,30 @@ package com.appygram.java;
 
 
 /**
- * Appygram.java
+ * <p>Main class used for configuring and accessing AppygramMessengers.</p>
  * 
- * Usage:
+ * <p>Usage:</p>
  * 
- * 1) Call Appygram.configure, passing at least an API Key to configure the 
+ * <p>1a) Call Appygram.configure, passing at least an API Key to configure the 
  * Global AppygramMessenger.  This can be called statically via 
  * Appygram.Global.  You can set other optional properties as desired.  
- * This must be called first before sending any Appygrams.
+ * This must be called first before sending any Appygrams.</p>
  * 
- * OR
- * 
- * Call Appygram.instance, passing at least an API Key to configure an 
+ * <p>1b) Call Appygram.instance, passing at least an API Key to configure an 
  * instance of AppygramMessenger.  This is useful when using multiple API 
  * Keys in the same application, or in application contexts where static 
  * objects are not ideal.  You only need to call this method once, and use 
- * the returned AppygramMessenger object from there. 
+ * the returned AppygramMessenger object from there.<p>
  * 
- * 2) Grab your AppygramMessenger object from either Appyggram.instance or 
- * Appygram.Global.
+ * <p>2) Grab your AppygramMessenger object from either Appyggram.instance or 
+ * Appygram.Global.</p>
  * 
- * 3) Call AppygramMessenger.create to generate an AppygramMessage object.
+ * <p>3) Call AppygramMessenger.create to generate an AppygramMessage object.</p>
  * 
- * 3) Set properties such as name, email, message, summary and more on your 
- * AppygramMessage.  You must supply the message property at a minimum.
+ * <p>4) Set properties such as name, email, message, summary and more on your 
+ * AppygramMessage.  You must supply the message property at a minimum.</p>
  * 
- * 4) Call AppygramMessenger.send, passing your message.
+ * <p>5) Call AppygramMessenger.send, passing your message.</p>
  * 
  * @author Carl Scott, <a href="http://solertium.com">Solertium Corporation</a>
  *

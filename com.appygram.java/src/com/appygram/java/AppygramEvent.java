@@ -1,9 +1,9 @@
 package com.appygram.java;
 
 /**
- * AppygramEvent.java
- * 
- * An event for when Appygrams are sent. 
+ * <p>An event for when Appygrams are sent.  This contains 
+ * the original AppygramMessage sent, a success flag, and 
+ * the response message, if available.</p>
  * 
  * @author Carl Scott, <a href="http://solertium.com">Solertium Corporation</a>
  *

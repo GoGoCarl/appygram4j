@@ -10,10 +10,8 @@ import java.net.ProtocolException;
 import java.net.URL;
 
 /**
- * MessageHandler.java
- * 
- * Handles delivery of Appygram messages.  Not intended for 
- * public consumption.
+ * <p>Handles delivery of Appygram messages.  Not intended for 
+ * public consumption.</p>
  * 
  * @author Carl Scott, <a href="http://solertium.com">Solertium Corporation</a>
  *

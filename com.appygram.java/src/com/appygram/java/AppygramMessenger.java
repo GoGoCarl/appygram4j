@@ -16,11 +16,9 @@ import com.appygram.java.MessageHandler.AppygramEndpoint;
 import com.google.gson.Gson;
 
 /**
- * AppygramMessenger.java
- * 
- * Handles delivery of messages and traces, as well as grabs the 
+ * <p>Handles delivery of messages and traces, as well as grabs the 
  * topic list.  Is bound to a particular Appygram configuration and 
- * API Key.  Multiples of these can exist in a single application.
+ * API Key.  Multiples of these can exist in a single application.</p>
  * 
  * @author Carl Scott, <a href="http://solertium.com">Solertium Corporation</a>
  *

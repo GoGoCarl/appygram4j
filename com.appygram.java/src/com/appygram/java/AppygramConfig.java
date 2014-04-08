@@ -3,37 +3,41 @@ package com.appygram.java;
 import java.util.Properties;
 
 /**
- * AppygramConfig.java
+ * <p>Set initial properties for sending appygrams.  You must provide your 
+ * API Key.  Other properties that you can set are:</p>
  * 
- * Set initial properties for sending appygrams.  You must provide your 
- * API Key.  Other properties that you can set are:
- * 
- * - Topic: Provide a default topic for Appygram Messages without one. The 
- * default is null, which sends to all your topics.
- * - URL: Set the endpoint for your Appygrams.  This is already defaulted 
+ * <ul>
+ * <li>Topic: Provide a default topic for Appygram Messages without one. The 
+ * default is null, which sends to all your topics.</li>
+ * <li>URL: Set the endpoint for your Appygrams.  This is already defaulted 
  * to the currently supported Appygram endpoint, which may be updated in the 
- * future.
- * - Platform and Software: Provide details on your specific implementation 
- * to go along with each Appygram sent by the calling code.
+ * future.</li>
+ * <li>Platform and Software: Provide details on your specific implementation 
+ * to go along with each Appygram sent by the calling code.</li>
+ * </ul>
  * 
- * Additionally, you can set run configuration options:
+ * <p>Additionally, you can set run configuration options:</p>
  * 
- * - Log to Console: Print errors about Appygram configuration or sending 
+ * <ul>
+ * <li>Log to Console: Print errors about Appygram configuration or sending 
  * Appygrams to the console, in addition to the AppygramLogger log.  Defaults 
- * to false.
- * - Allow Threads: Threading can be turned off by setting allowThreads to 
+ * to false.</li>
+ * <li>Allow Threads: Threading can be turned off by setting allowThreads to 
  * false. By default, it's on, meaning that Appygrams will be sent in the 
- * background.
+ * background.</li>
+ * </ul>
  * 
- * This information can be set via Properties files using the following keys:
+ * <p>This information can be set via Properties files using the following keys:</p>
  * 
- * - com.appygram.java.key -- the API key (required)
- * - com.appygram.java.topic -- the default topic
- * - com.appygram.java.url -- the hostname of the Appygram endpoint
- * - com.appygram.java.platform -- your application platform
- * - com.appygram.java.software -- your application software
- * - com.appygram.java.console -- true to log to console.
- * - com.appygram.java.thread -- true to allow threads. 
+ * <ul>
+ * <li>com.appygram.java.key -- the API key (required)</li>
+ * <li>com.appygram.java.topic -- the default topic</li>
+ * <li>com.appygram.java.url -- the hostname of the Appygram endpoint</li>
+ * <li>com.appygram.java.platform -- your application platform</li>
+ * <li>com.appygram.java.software -- your application software</li>
+ * <li>com.appygram.java.console -- true to log to console</li>
+ * <li>com.appygram.java.thread -- true to allow threads</li>
+ * </ul>
  * 
  * @author Carl Scott, <a href="http://solertium.com">Solertium Corporation</a>
  *

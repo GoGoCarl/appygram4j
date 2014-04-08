@@ -5,13 +5,13 @@ import java.util.Map;
 import com.google.gson.Gson;
 
 /**
- * AppygramMessage.java
- * 
- * Represents an Appygram message.  The message parameter is required, 
+ * <p>Represents an Appygram message.  The message parameter is required, 
  * the rest are optional.  If you need more fields, you can supply them 
- * via the app_json HashMap.
+ * via the app_json HashMap.</p>
  * 
- * All data is serialized to JSON when sending to Appygram.
+ * <p>All data is serialized to JSON when sending to Appygram.</p>
+ * 
+ * <p>This class can be extended for ease of development.</p>
  * 
  * @author Carl Scott, <a href="http://solertium.com">Solertium Corporation</a>
  *

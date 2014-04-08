@@ -1,10 +1,8 @@
 package com.appygram.java;
 
 /**
- * AppygramTopic.java
- * 
- * Represents a topic set up on Appygram.com.  The ID 
- * and display name are available to the caller.
+ * <p>Represents a topic set up on Appygram.com.  The ID 
+ * and display name are available to the caller.</p>
  * 
  * @author Carl Scott, <a href="http://solertium.com">Solertium Corporation</a>
  *

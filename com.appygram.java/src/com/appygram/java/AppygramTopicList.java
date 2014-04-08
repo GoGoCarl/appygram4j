@@ -3,10 +3,8 @@ package com.appygram.java;
 import java.util.ArrayList;
 
 /**
- * AppygramTopicList.java
- * 
- * Represents an list of AppygramTopics.  This class merely exists 
- * to make the transformation of JSON to Object easier.
+ * <p>Represents an list of AppygramTopics.  This class merely exists 
+ * to make the transformation of JSON to Object easier.</p>
  * 
  * @author Carl Scott, <a href="http://solertium.com">Solertium Corporation</a>
  *

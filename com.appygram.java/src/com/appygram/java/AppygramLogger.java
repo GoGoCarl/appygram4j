@@ -5,10 +5,8 @@ import java.util.logging.LogRecord;
 import java.util.logging.Logger;
 
 /**
- * AppygramLogger.java
- * 
- * Handles all Appygram logging.  Will log to console is specified via 
- * configuration properties.
+ * <p>Handles all Appygram logging.  Will log to console is specified via 
+ * configuration properties.</p>
  * 
  * @author Carl Scott, <a href="http://solertium.com">Solertium Corporation</a>
  *
