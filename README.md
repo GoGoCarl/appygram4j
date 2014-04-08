@@ -29,7 +29,7 @@ AppygramMessenger object from anywhere in your code simply by calling
 ### Create specific AppygramMessage instance(s).
 
 If your application may have muliple API keys, or you prefer not to use 
-static objects, you can create a specific instance of AppygramMessager 
+static objects, you can create a specific instance of AppygramMessenger 
 by calling <code>Appygram.instance</code>.  This call takes an AppygramConfig 
 object, described below, and returns the AppygramMessenger.  Use this 
 object to send messages in your application.
@@ -118,9 +118,9 @@ and you're done.
 Appygram is also equipped to specifically handle exceptions via Traces. 
 This is additional information supplied in an AppygramMessage that adds 
 functionality to your Appygram. Such improvements include de-duplication 
-of similar errors and alerts of how many of some type of error weres sent.
+of similar errors and alerts of how many of some type of error were sent.
 
-Using traces works almost exactly like normal AppygramMessages.  You 
+Using Traces works almost exactly like normal AppygramMessages.  You 
 can supply the same information.  The only differences are that you must 
 supply a trace (exception), and the message field is optional, as one 
 will be generated for you.  If you do supply a message, the generated 
