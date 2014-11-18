@@ -1,8 +1,10 @@
 package com.appygram.java;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 
 /**
  * <p>Represents an Appygram message.  The message parameter is required, 
@@ -20,7 +22,7 @@ public class AppygramMessage {
 	
 	protected String name, email, phone, topic, message, 
 		platform, software, summary, api_key;
-	protected Map<String, Object> app_json;
+	protected String app_json;
 	
 	public String getName() {
 		return name;
@@ -86,12 +88,21 @@ public class AppygramMessage {
 		this.summary = summary;
 	}
 
+	@SuppressWarnings("unchecked")
 	public Map<String, Object> getAppJSON() {
-		return app_json;
+		Map<String, Object> map = new HashMap<String, Object>();
+		if (app_json == null || "".equals(app_json))
+			return map;
+		
+		return (Map<String, Object>) createGson().fromJson(app_json, map.getClass());
 	}
 
 	public void setAppJSON(Map<String, Object> appJson) {
-		app_json = appJson;
+		app_json = createGson().toJson(appJson);
+	}
+	
+	public void setAppJSON(JsonObject json) {
+		app_json = json.toString();
 	}
 	
 	public boolean isValid() {
