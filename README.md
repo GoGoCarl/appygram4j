@@ -1,9 +1,59 @@
-Appygram4J (1.0.1)
+Appygram4J (1.0.2)
 ==================
 
 Appygram4J is a simple Appygram connector for Java, supporting all 
 basic functionality for sending an Appygram to Appygram.com from 
 any Java application.
+
+## Download
+
+Download the latest release from the Releases page to get started, or 
+add Appygram4J as a dependency using one of the methods below:
+
+[![Release](https://img.shields.io/github/release/GoGoCarl/appygram4j.svg?label=maven)](https://jitpack.io/#GoGoCarl/appygram4j)
+
+### Using Gradle 
+
+```gradle
+repositories { 
+  maven { url "https://jitpack.io" }
+}
+dependencies {
+  compile 'com.github.GoGoCarl:appygram4j:1.0.2'
+}
+```
+
+### Using Gradle with Android Studio
+
+If your Android Studio project has a project-level build.gradle with a 
+section for <code>allprojects</code>, instead of adding the repositories 
+section to the module-level gradle file, instead append the 
+<code>maven { url "https://jitpack.io" }</code> line above under the 
+<code>allprojects</code> repositories.
+
+```gradle
+allprojects {
+  repositories {
+    jcenter()
+    maven { url "https://jitpack.io" }
+  }
+}
+```
+
+### Using Maven
+
+```xml
+<repository>
+  <id>jitpack.io</id>
+  <url>https://jitpack.io</url>
+</repository>
+
+<dependency>
+  <groupId>om.github.GoGoCarl</groupId>
+  <artifactId>appygram4j</artifactId>
+  <version>1.0.2</version>
+</dependency>
+ ```
 
 ## Getting Started
 
@@ -11,7 +61,7 @@ One you introduce com.appygram.java into your project dependencies,
 the key component to sending Appygrams using Appygram4J is to create 
 an instance of <code>AppygramMessenger</code>.  This object will 
 allow you to send Appygram messages and traces, as well as retrieve 
-a list of topics.  
+a list of topics.
 
 AppygramMessenger is bound to a given API key, so you'll need to 
 configure your messenger with properties via <code>AppygramConfig</code>. 
