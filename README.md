@@ -49,7 +49,7 @@ allprojects {
 </repository>
 
 <dependency>
-  <groupId>om.github.GoGoCarl</groupId>
+  <groupId>com.github.GoGoCarl</groupId>
   <artifactId>appygram4j</artifactId>
   <version>1.0.2</version>
 </dependency>
